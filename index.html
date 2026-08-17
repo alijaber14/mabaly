@@ -585,7 +585,7 @@ height:250px;
 
 <div class="cart-icon" onclick="openCart()">
 
-
+🛒
 
 <span id="count">0</span>
 
@@ -604,7 +604,7 @@ height:250px;
 
 <h1>MAB Electric</h1>
 
-<p>     </p>
+<p>كل احتياجاتك من العدد والخامات الكهربائية</p>
 
 </div>
 
@@ -618,7 +618,7 @@ height:250px;
 <input
 type="text"
 id="homeSearch"
-placeholder="   ..."
+placeholder="🔍 ابحث عن منتج..."
 onkeyup="homeSearchProducts()">
 
 </div>
@@ -628,9 +628,9 @@ onkeyup="homeSearchProducts()">
 
 <div class="section-title">
 
-<h2>  </h2>
+<h2>📦 أقسام المنتجات</h2>
 
-<p>    </p>
+<p>اختار القسم اللي بتدور عليه</p>
 
 </div>
 
@@ -638,33 +638,33 @@ onkeyup="homeSearchProducts()">
 <div class="categories">
 
 <div class="category" onclick="openCategory('smart')">
-<div class="icon"></div>
-<h3></h3>
+<div class="icon">🏠</div>
+<h3>سمارت</h3>
 </div>
 
 <div class="category" onclick="openCategory('tools')">
-<div class="icon"></div>
-<h3></h3>
+<div class="icon">🔧</div>
+<h3>العدد</h3>
 </div>
 
 <div class="category" onclick="openCategory('springs')">
-<div class="icon"></div>
-<h3>  </h3>
+<div class="icon">🧵</div>
+<h3>سوست سحب الأسلاك</h3>
 </div>
 
 <div class="category" onclick="openCategory('installation')">
-<div class="icon"></div>
-<h3> </h3>
+<div class="icon">⚡</div>
+<h3>خامات التأسيس</h3>
 </div>
 
 <div class="category" onclick="openCategory('finishing')">
-<div class="icon"></div>
-<h3> </h3>
+<div class="icon">✨</div>
+<h3>خامات التشطيب</h3>
 </div>
 
 <div class="category" onclick="openCategory('accessories')">
-<div class="icon"></div>
-<h3> </h3>
+<div class="icon">🔌</div>
+<h3>مستلزمات الكهرباء</h3>
 </div>
 
 </div>
@@ -674,9 +674,9 @@ onkeyup="homeSearchProducts()">
 
 <div class="section-title">
 
-<h2>    </h2>
+<h2>🔥 الأكثر رواجًا في البيع</h2>
 
-<p>  </p>
+<p>أكتر المنتجات طلبًا</p>
 
 </div>
 
@@ -689,7 +689,7 @@ onkeyup="homeSearchProducts()">
 
 <div class="section-title">
 
-<h2>  </h2>
+<h2>🔎 نتائج البحث</h2>
 
 </div>
 
@@ -707,7 +707,7 @@ onkeyup="homeSearchProducts()">
 <div class="category-header">
 
 <button class="back-btn" onclick="goHome()">
- 
+← الرئيسية
 </button>
 
 <h1 id="categoryTitle"></h1>
@@ -722,7 +722,7 @@ onkeyup="homeSearchProducts()">
 <input
 type="text"
 id="categorySearch"
-placeholder="   ..."
+placeholder="🔍 ابحث داخل القسم..."
 onkeyup="searchInsideCategory()">
 
 </div>
@@ -739,17 +739,17 @@ onkeyup="searchInsideCategory()">
 
 <div class="box">
 
-<img id="mimg" alt="">
+<img id="mimg" alt="المنتج">
 
 <h3 id="mname"></h3>
 
 <p id="mprice"></p>
 
-<label></label>
+<label>الكمية</label>
 
 <div class="qty-box">
 
-<button onclick="changeModalQty(-1)"></button>
+<button onclick="changeModalQty(-1)">−</button>
 
 <input
 id="qty"
@@ -764,11 +764,11 @@ min="1">
 <div style="display:flex;gap:10px">
 
 <button onclick="addCart()">
-  
+🛒 إضافة للسلة
 </button>
 
 <button class="close" onclick="closeModal()">
-
+إغلاق
 </button>
 
 </div>
@@ -784,43 +784,43 @@ min="1">
 
 <div class="cartBox">
 
-<h2>  </h2>
+<h2>🛒 سلة المشتريات</h2>
 
 <div id="cartItems"></div>
 
-<h3 id="total"> : 0 </h3>
+<h3 id="total">الإجمالي : 0 جنيه</h3>
 
 <hr>
 
-<h3> </h3>
+<h3>بيانات العميل</h3>
 
 <input
 type="text"
 id="customerName"
-placeholder="">
+placeholder="الاسم">
 
 <input
 type="tel"
 id="customerPhone"
-placeholder=" ">
+placeholder="رقم الهاتف">
 
 <input
 type="text"
 id="customerAddress"
-placeholder=" ">
+placeholder="العنوان بالتفصيل">
 
 <textarea
 id="customerNote"
-placeholder=" ()"></textarea>
+placeholder="ملاحظات (اختياري)"></textarea>
 
 <button onclick="checkout()">
-    
+📲 إتمام الطلب على واتساب
 </button>
 
 <br><br>
 
 <button onclick="closeCart()" class="close">
-
+إغلاق
 </button>
 
 </div>
@@ -830,7 +830,7 @@ placeholder=" ()"></textarea>
 
 <footer>
 
-� 2026 MAB Electric -   
+© 2026 MAB Electric - جميع الحقوق محفوظة
 
 </footer>
 
@@ -855,15 +855,15 @@ const data=[
 ===================================================== */
 
 {
-name:"  1 Gang WiFi",
+name:"مفتاح سمارت 1 Gang WiFi",
 price:1365,
-img:"smart1.jpg",
+img:"img/smart1.jpg",
 category:"smart",
 popular:true
 },
 
 {
-name:"  2 Gang WiFi",
+name:"مفتاح سمارت 2 Gang WiFi",
 price:1465,
 img:"smart2.jpg",
 category:"smart",
@@ -871,7 +871,7 @@ popular:false
 },
 
 {
-name:"  3 Gang WiFi",
+name:"مفتاح سمارت 3 Gang WiFi",
 price:1565,
 img:"smart3.jpg",
 category:"smart",
@@ -879,7 +879,7 @@ popular:false
 },
 
 {
-name:"  4 Gang WiFi",
+name:"مفتاح سمارت 4 Gang WiFi",
 price:1665,
 img:"smart4.jpg",
 category:"smart",
@@ -887,7 +887,7 @@ popular:false
 },
 
 {
-name:"  1 Gang Zigbee",
+name:"مفتاح سمارت 1 Gang Zigbee",
 price:1465,
 img:"smart1-zigbee.jpg",
 category:"smart",
@@ -895,7 +895,7 @@ popular:false
 },
 
 {
-name:"  2 Gang Zigbee",
+name:"مفتاح سمارت 2 Gang Zigbee",
 price:1565,
 img:"smart2-zigbee.jpg",
 category:"smart",
@@ -903,7 +903,7 @@ popular:false
 },
 
 {
-name:"  3 Gang Zigbee",
+name:"مفتاح سمارت 3 Gang Zigbee",
 price:1665,
 img:"smart3-zigbee.jpg",
 category:"smart",
@@ -911,7 +911,7 @@ popular:false
 },
 
 {
-name:"  4 Gang Zigbee",
+name:"مفتاح سمارت 4 Gang Zigbee",
 price:1765,
 img:"smart4-zigbee.jpg",
 category:"smart",
@@ -924,7 +924,7 @@ popular:false
 ===================================================== */
 
 {
-name:"    ",
+name:"ماكينة السحب المستوردة الأصلية بالتروس",
 price:2800,
 img:"machine-imported.jpg",
 category:"tools",
@@ -932,7 +932,7 @@ popular:true
 },
 
 {
-name:"  ",
+name:"ماكينة السحب المصرية",
 price:1700,
 img:"machine-egypt.jpg",
 category:"tools",
@@ -940,7 +940,7 @@ popular:false
 },
 
 {
-name:" ",
+name:"كاوية أسلاك",
 price:600,
 img:"wire-iron.jpg",
 category:"tools",
@@ -953,140 +953,50 @@ popular:true
 ===================================================== */
 
 {
-name:"   5 ",
+name:"سوستة فيبر جلاس 5 ملي",
 price:0,
-img:"spring5.jpg",
+img:"img/ss1.png",
 category:"springs",
 popular:false
 },
 
+
 {
-name:"   10 ",
+name:"سوستة فيبر جلاس 10 متر",
 price:265,
-img:"spring10.jpg",
+img:"img/ss1.png",
 category:"springs",
 popular:false
 },
 
 {
-name:"   20 ",
+name:"سوستة فيبر جلاس 20 متر",
 price:530,
-img:"spring20.jpg",
+img:"img/ss1.png",
 category:"springs",
 popular:false
 },
 
 {
-name:"   25 ",
+name:"سوستة فيبر جلاس 25 متر",
 price:660,
-img:"spring25.jpg",
+img:"img/ss1.png",
 category:"springs",
 popular:false
 },
 
 {
-name:"   35 ",
+name:"سوستة فيبر جلاس 35 متر",
 price:930,
-img:"spring35.jpg",
+img:"img/ss1.png",
 category:"springs",
 popular:false
 },
 
-{
-name:"  5  - 4 ",
-price:500,
-img:"wire5.jpg",
-category:"springs",
-popular:false
-},
 
-{
-name:"  10  - 4 ",
-price:650,
-img:"wire10.jpg",
-category:"springs",
-popular:false
-},
 
-{
-name:"  15  - 4 ",
-price:750,
-img:"wire15.jpg",
-category:"springs",
-popular:false
-},
 
-{
-name:"  20  - 4 ",
-price:950,
-img:"wire20.jpg",
-category:"springs",
-popular:false
-},
 
-{
-name:"  25  - 4 ",
-price:1100,
-img:"wire25.jpg",
-category:"springs",
-popular:false
-},
-
-{
-name:"  30  - 4 ",
-price:1200,
-img:"wire30.jpg",
-category:"springs",
-popular:false
-},
-
-{
-name:"  -  ",
-price:120,
-img:"reel-long.jpg",
-category:"springs",
-popular:false
-},
-
-{
-name:"  -  ",
-price:80,
-img:"reel-small.jpg",
-category:"springs",
-popular:false
-},
-
-{
-name:"  ",
-price:120,
-img:"spring-grip.jpg",
-category:"springs",
-popular:false
-},
-
-{
-name:"  5  - 4.5 ",
-price:900,
-img:"rods5.jpg",
-category:"springs",
-popular:false
-},
-
-{
-name:"  3  - 4.5 ",
-price:700,
-img:"rods3.jpg",
-category:"springs",
-popular:false
-},
-
-{
-name:"  3  - 5.5 ",
-price:850,
-img:"rods3-5mm.jpg",
-category:"springs",
-popular:false
-},
 
 
 /* =====================================================
@@ -1094,7 +1004,7 @@ popular:false
 ===================================================== */
 
 {
-name:"  10 ",
+name:"مسطرة خرطوم 10 قفيز",
 price:30,
 img:"hose-ruler.jpg",
 category:"installation",
@@ -1102,7 +1012,7 @@ popular:false
 },
 
 {
-name:"  16",
+name:"خرطوم أرضي 16",
 price:0,
 img:"hose16.jpg",
 category:"installation",
@@ -1110,7 +1020,7 @@ popular:false
 },
 
 {
-name:" PVC 20 ",
+name:"ماسورة PVC 20 ملي",
 price:0,
 img:"pvc20.jpg",
 category:"installation",
@@ -1123,7 +1033,7 @@ popular:false
 ===================================================== */
 
 {
-name:"  ",
+name:"أداة تشطيب كهربائية",
 price:0,
 img:"finishing.jpg",
 category:"finishing",
@@ -1131,7 +1041,7 @@ popular:false
 },
 
 {
-name:" ",
+name:"مستلزمات التشطيب",
 price:0,
 img:"finishing-tools.jpg",
 category:"finishing",
@@ -1144,7 +1054,7 @@ popular:false
 ===================================================== */
 
 {
-name:" ",
+name:"مستلزمات كهرباء",
 price:0,
 img:"accessories.jpg",
 category:"accessories",
@@ -1178,7 +1088,7 @@ return `
 <div class="card">
 
 ${p.popular ?
-'<div class="badge">  </div>'
+'<div class="badge">🔥 الأكثر مبيعًا</div>'
 :
 ''}
 
@@ -1196,14 +1106,14 @@ onerror="this.src='https://picsum.photos/400/500'">
 
 ${p.price>0
 ?
-p.price+" "
+p.price+" جنيه"
 :
-"  "}
+"السعر عند الطلب"}
 
 </p>
 
 <button onclick="show(${index})">
- 
+عرض المنتج
 </button>
 
 </div>
@@ -1248,40 +1158,40 @@ document.getElementById("categoryPage")
 
 const names={
 
-smart:"  ",
+smart:"🏠 قسم السمارت",
 
-tools:"  ",
+tools:"🔧 قسم العدد",
 
-springs:"   ",
+springs:"🧵 سوست سحب الأسلاك",
 
-installation:"  ",
+installation:"⚡ خامات التأسيس",
 
-finishing:"  ",
+finishing:"✨ خامات التشطيب",
 
-accessories:"  "
+accessories:"🔌 مستلزمات الكهرباء"
 
 };
 
 
 const descriptions={
 
-smart:"    ",
+smart:"منتجات وأنظمة السمارت والتحكم الذكي",
 
-tools:"  ",
+tools:"ماكينات وأدوات الكهرباء",
 
-springs:"     ",
+springs:"سوست الفيبر جلاس والواير لسحب الأسلاك",
 
-installation:"   ",
+installation:"خامات ومستلزمات أعمال التأسيس",
 
-finishing:"   ",
+finishing:"خامات ومستلزمات أعمال التشطيب",
 
-accessories:"  "
+accessories:"مستلزمات وقطع الكهرباء"
 
 };
 
 
 document.getElementById("categoryTitle")
-.textContent=names[category] || "";
+.textContent=names[category] || "المنتجات";
 
 document.getElementById("categoryDescription")
 .textContent=descriptions[category] || "";
@@ -1300,7 +1210,7 @@ products.map(createCard).join("")
 :
 `
 <p style="text-align:center;padding:30px;color:#94a3b8">
-      
+لا توجد منتجات في هذا القسم حاليًا
 </p>
 `;
 
@@ -1339,7 +1249,7 @@ products.map(createCard).join("")
 :
 `
 <p style="text-align:center;padding:30px;color:#94a3b8">
-    
+❌ مفيش منتج بالاسم ده
 </p>
 `;
 
@@ -1387,7 +1297,7 @@ results.map(createCard).join("")
 :
 `
 <p style="text-align:center;color:#94a3b8;padding:20px">
-    
+❌ مفيش منتج بالاسم ده
 </p>
 `;
 
@@ -1433,9 +1343,9 @@ data[i].name;
 document.getElementById("mprice").textContent=
 data[i].price>0
 ?
-data[i].price+" "
+data[i].price+" جنيه"
 :
-"  ";
+"السعر عند الطلب";
 
 document.getElementById("qty").value=1;
 
@@ -1517,7 +1427,7 @@ updateCount();
 
 closeModal();
 
-alert("     ");
+alert("✅ تمت إضافة المنتج إلى السلة");
 
 }
 
@@ -1589,15 +1499,15 @@ class="cart-image">
 
 ${x.price>0
 ?
-x.price+" "
+x.price+" جنيه"
 :
-"  "}
+"السعر عند الطلب"}
 
 <div class="quantity">
 
 <button
 onclick="changeCartQty(${i},-1)">
-
+−
 </button>
 
 <span>${x.qty}</span>
@@ -1615,7 +1525,7 @@ onclick="changeCartQty(${i},1)">
 <button
 class="delete-btn"
 onclick="removeItem(${i})">
-
+🗑
 </button>
 
 </div>
@@ -1631,7 +1541,7 @@ html=`
 
 <p style="text-align:center;padding:30px;color:#94a3b8">
 
-  
+🛒 السلة فارغة
 
 </p>
 
@@ -1646,7 +1556,7 @@ document.getElementById("cartItems")
 
 document.getElementById("total")
 .textContent=
-" : "+total+" ";
+"الإجمالي : "+total+" جنيه";
 
 }
 
@@ -1713,7 +1623,7 @@ function checkout(){
 
 if(cart.length===0){
 
-alert("  ");
+alert("🛒 السلة فارغة");
 
 return;
 
@@ -1739,7 +1649,7 @@ document.getElementById("customerNote")
 
 if(name==="" || phone==="" || address===""){
 
-alert("     ");
+alert("⚠️ من فضلك أكمل بيانات العميل");
 
 return;
 
@@ -1750,27 +1660,27 @@ let total=0;
 
 
 let msg=
-" *   MAB Electric*%0A%0A";
+"🛍️ *طلب جديد من MAB Electric*%0A%0A";
 
 
-msg+=" : "+
+msg+="👤 الاسم: "+
 encodeURIComponent(name)+
 "%0A";
 
 
-msg+=" : "+
+msg+="📞 الهاتف: "+
 encodeURIComponent(phone)+
 "%0A";
 
 
-msg+=" : "+
+msg+="📍 العنوان: "+
 encodeURIComponent(address)+
 "%0A";
 
 
 if(note!==""){
 
-msg+=" : "+
+msg+="📝 الملاحظات: "+
 encodeURIComponent(note)+
 "%0A";
 
@@ -1787,23 +1697,23 @@ total+=x.price*x.qty;
 }
 
 
-msg+=" "+
+msg+="📦 "+
 encodeURIComponent(x.name)+
 "%0A";
 
 
-msg+=" : "+
+msg+="🔢 الكمية: "+
 x.qty+
 "%0A";
 
 
-msg+=" : "+
+msg+="💵 السعر: "+
 (
 x.price>0
 ?
-x.price+" "
+x.price+" جنيه"
 :
-"  "
+"السعر عند الطلب"
 )+
 "%0A";
 
@@ -1813,9 +1723,9 @@ msg+="--------------------%0A";
 });
 
 
-msg+=" *: "+
+msg+="💰 *الإجمالي: "+
 total+
-" *";
+" جنيه*";
 
 
 window.open(
