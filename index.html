@@ -1,0 +1,1939 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+<title>MAB Electric</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+box-sizing:border-box;
+}
+
+body{
+margin:0;
+font-family:'Cairo',sans-serif;
+background:#0f172a;
+color:#fff;
+}
+
+/* ================= HEADER ================= */
+
+header{
+background:#181818;
+padding:12px 20px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+position:sticky;
+top:0;
+z-index:999;
+box-shadow:0 5px 20px rgba(0,0,0,.3);
+}
+
+.logo{
+display:flex;
+align-items:center;
+gap:10px;
+cursor:pointer;
+}
+
+.logo img{
+width:45px;
+height:45px;
+object-fit:contain;
+}
+
+.logo h2{
+margin:0;
+font-size:20px;
+}
+
+.cart-icon{
+position:relative;
+cursor:pointer;
+font-size:27px;
+}
+
+#count{
+position:absolute;
+top:-8px;
+left:-10px;
+background:#ef4444;
+width:22px;
+height:22px;
+border-radius:50%;
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:12px;
+font-weight:bold;
+}
+
+/* ================= PAGES ================= */
+
+.page{
+display:none;
+animation:pageIn .3s ease;
+}
+
+.page.active{
+display:block;
+}
+
+@keyframes pageIn{
+from{
+opacity:0;
+transform:translateY(10px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
+
+/* ================= HERO ================= */
+
+.hero{
+height:420px;
+background:url("img/cover.png") center/cover;
+display:flex;
+justify-content:center;
+align-items:center;
+position:relative;
+}
+
+.hero::before{
+content:"";
+position:absolute;
+inset:0;
+background:rgba(0,0,0,.5);
+}
+
+.hero-content{
+position:relative;
+text-align:center;
+}
+
+.hero h1{
+font-size:45px;
+font-weight:800;
+margin:0 0 10px;
+}
+
+.hero p{
+font-size:18px;
+margin:0;
+}
+
+/* ================= SEARCH ================= */
+
+.search-box{
+padding:20px;
+display:flex;
+justify-content:center;
+}
+
+.search-box input{
+width:100%;
+max-width:600px;
+padding:15px 22px;
+border:none;
+border-radius:50px;
+background:#1e293b;
+color:#fff;
+font-size:17px;
+outline:none;
+box-shadow:0 8px 20px rgba(0,0,0,.25);
+}
+
+.search-box input::placeholder{
+color:#94a3b8;
+}
+
+/* ================= TITLES ================= */
+
+.section-title{
+text-align:center;
+margin:25px 0 15px;
+}
+
+.section-title h2{
+font-size:28px;
+margin:0;
+}
+
+.section-title p{
+color:#94a3b8;
+margin:5px 0;
+}
+
+/* ================= CATEGORIES ================= */
+
+.categories{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+gap:12px;
+padding:15px 20px;
+}
+
+.category{
+background:#1e293b;
+border-radius:15px;
+padding:20px 10px;
+text-align:center;
+cursor:pointer;
+transition:.3s;
+border:1px solid transparent;
+}
+
+.category:hover{
+transform:translateY(-5px);
+border-color:#ef4444;
+background:#273449;
+}
+
+.category .icon{
+font-size:32px;
+margin-bottom:7px;
+}
+
+.category h3{
+margin:0;
+font-size:15px;
+}
+
+/* ================= PRODUCTS ================= */
+
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:15px;
+padding:20px;
+}
+
+.card{
+background:#1e293b;
+border-radius:16px;
+overflow:hidden;
+transition:.3s;
+box-shadow:0 8px 25px rgba(0,0,0,.25);
+position:relative;
+}
+
+.card:hover{
+transform:translateY(-7px);
+box-shadow:0 15px 35px rgba(0,0,0,.45);
+}
+
+.card img{
+width:100%;
+height:280px;
+object-fit:cover;
+cursor:pointer;
+transition:.4s;
+}
+
+.card:hover img{
+transform:scale(1.06);
+}
+
+.info{
+padding:15px;
+text-align:center;
+}
+
+.info h3{
+margin:0;
+font-size:18px;
+font-weight:700;
+}
+
+.info p{
+margin:8px 0 12px;
+font-size:21px;
+font-weight:800;
+color:#22c55e;
+}
+
+.badge{
+position:absolute;
+top:12px;
+left:12px;
+background:#ef4444;
+color:#fff;
+padding:5px 12px;
+border-radius:20px;
+font-size:12px;
+font-weight:bold;
+z-index:2;
+}
+
+/* ================= BUTTON ================= */
+
+button{
+width:100%;
+padding:12px;
+border:none;
+border-radius:10px;
+background:#ef4444;
+color:#fff;
+font-size:15px;
+font-weight:bold;
+cursor:pointer;
+transition:.3s;
+font-family:'Cairo',sans-serif;
+}
+
+button:hover{
+background:#dc2626;
+transform:scale(1.02);
+}
+
+.close{
+background:#475569;
+}
+
+.close:hover{
+background:#334155;
+}
+
+/* ================= CATEGORY PAGE ================= */
+
+.category-header{
+padding:25px 20px 10px;
+}
+
+.back-btn{
+width:auto;
+padding:9px 18px;
+background:#334155;
+margin-bottom:15px;
+}
+
+.back-btn:hover{
+background:#475569;
+}
+
+.category-header h1{
+font-size:32px;
+margin:5px 0;
+}
+
+.category-header p{
+color:#94a3b8;
+margin:0;
+}
+
+/* ================= MODAL ================= */
+
+#modal{
+display:none;
+position:fixed;
+inset:0;
+background:rgba(0,0,0,.8);
+justify-content:center;
+align-items:center;
+z-index:9998;
+}
+
+.box{
+background:#1e293b;
+padding:20px;
+border-radius:20px;
+width:90%;
+max-width:450px;
+box-shadow:0 20px 50px rgba(0,0,0,.5);
+animation:popup .3s;
+}
+
+@keyframes popup{
+from{
+transform:scale(.8);
+opacity:0;
+}
+to{
+transform:scale(1);
+opacity:1;
+}
+}
+
+.box img{
+width:100%;
+height:350px;
+object-fit:cover;
+border-radius:15px;
+margin-bottom:15px;
+}
+
+#mname{
+margin:5px 0;
+}
+
+#mprice{
+font-size:24px;
+font-weight:bold;
+color:#22c55e;
+margin:10px 0 20px;
+}
+
+.qty-box{
+display:flex;
+align-items:center;
+gap:10px;
+margin-bottom:15px;
+}
+
+.qty-box input{
+margin:0;
+text-align:center;
+}
+
+/* ================= INPUT ================= */
+
+input,
+textarea{
+width:100%;
+padding:12px;
+border-radius:10px;
+border:none;
+margin-top:5px;
+margin-bottom:15px;
+font-size:16px;
+background:#0f172a;
+color:white;
+font-family:'Cairo',sans-serif;
+}
+
+textarea{
+resize:vertical;
+min-height:90px;
+}
+
+/* ================= CART ================= */
+
+.cartModal{
+display:none;
+position:fixed;
+inset:0;
+background:rgba(0,0,0,.8);
+justify-content:center;
+align-items:center;
+z-index:9999;
+}
+
+.cartBox{
+background:#1e293b;
+padding:20px;
+width:95%;
+max-width:550px;
+border-radius:20px;
+max-height:90vh;
+overflow:auto;
+}
+
+.item{
+display:flex;
+align-items:center;
+gap:10px;
+padding:12px 0;
+border-bottom:1px solid #334155;
+}
+
+.cart-image{
+width:70px;
+height:70px;
+border-radius:10px;
+object-fit:cover;
+}
+
+.item-info{
+flex:1;
+line-height:1.8;
+}
+
+.delete-btn{
+width:auto;
+padding:7px 10px;
+}
+
+.quantity{
+display:flex;
+align-items:center;
+gap:7px;
+margin-top:5px;
+}
+
+.quantity button{
+width:30px;
+height:30px;
+padding:0;
+}
+
+#total{
+color:#22c55e;
+font-size:22px;
+}
+
+/* ================= FOOTER ================= */
+
+footer{
+margin-top:40px;
+padding:25px;
+background:#181818;
+text-align:center;
+color:#94a3b8;
+}
+
+/* ================= MOBILE ================= */
+
+@media(max-width:768px){
+
+.hero{
+height:230px;
+}
+
+.hero h1{
+font-size:28px;
+}
+
+.hero p{
+font-size:14px;
+}
+
+.grid{
+grid-template-columns:repeat(2,1fr);
+gap:10px;
+padding:12px;
+}
+
+.card img{
+height:190px;
+}
+
+.info{
+padding:10px;
+}
+
+.info h3{
+font-size:14px;
+}
+
+.info p{
+font-size:17px;
+}
+
+.info button{
+font-size:12px;
+padding:9px;
+}
+
+.categories{
+grid-template-columns:repeat(2,1fr);
+padding:12px;
+}
+
+.category{
+padding:15px 5px;
+}
+
+.category .icon{
+font-size:27px;
+}
+
+.category h3{
+font-size:13px;
+}
+
+.category-header h1{
+font-size:25px;
+}
+
+.box{
+width:95%;
+padding:15px;
+max-height:90vh;
+overflow-y:auto;
+}
+
+.box img{
+height:250px;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- ================= HEADER ================= -->
+
+<header>
+
+<div class="logo" onclick="goHome()">
+
+<img src="img/logo.png" alt="MAB Electric">
+<h2>MAB Electric</h2>
+
+</div>
+
+<div class="cart-icon" onclick="openCart()">
+
+🛒
+
+<span id="count">0</span>
+
+</div>
+
+</header>
+
+
+<!-- ================= HOME PAGE ================= -->
+
+<div id="homePage" class="page active">
+
+<div class="hero">
+
+<div class="hero-content">
+
+<h1>MAB Electric</h1>
+
+<p>كل احتياجاتك من العدد والخامات الكهربائية</p>
+
+</div>
+
+</div>
+
+
+<!-- SEARCH -->
+
+<div class="search-box">
+
+<input
+type="text"
+id="homeSearch"
+placeholder="🔍 ابحث عن منتج..."
+onkeyup="homeSearchProducts()">
+
+</div>
+
+
+<!-- CATEGORIES -->
+
+<div class="section-title">
+
+<h2>📦 أقسام المنتجات</h2>
+
+<p>اختار القسم اللي بتدور عليه</p>
+
+</div>
+
+
+<div class="categories">
+
+<div class="category" onclick="openCategory('smart')">
+<div class="icon">🏠</div>
+<h3>سمارت</h3>
+</div>
+
+<div class="category" onclick="openCategory('tools')">
+<div class="icon">🔧</div>
+<h3>العدد</h3>
+</div>
+
+<div class="category" onclick="openCategory('springs')">
+<div class="icon">🧵</div>
+<h3>سوست سحب الأسلاك</h3>
+</div>
+
+<div class="category" onclick="openCategory('installation')">
+<div class="icon">⚡</div>
+<h3>خامات التأسيس</h3>
+</div>
+
+<div class="category" onclick="openCategory('finishing')">
+<div class="icon">✨</div>
+<h3>خامات التشطيب</h3>
+</div>
+
+<div class="category" onclick="openCategory('accessories')">
+<div class="icon">🔌</div>
+<h3>مستلزمات الكهرباء</h3>
+</div>
+
+</div>
+
+
+<!-- POPULAR -->
+
+<div class="section-title">
+
+<h2>🔥 الأكثر رواجًا في البيع</h2>
+
+<p>أكتر المنتجات طلبًا</p>
+
+</div>
+
+<div class="grid" id="popularProducts"></div>
+
+
+<!-- SEARCH RESULTS -->
+
+<div id="homeSearchSection" style="display:none">
+
+<div class="section-title">
+
+<h2>🔎 نتائج البحث</h2>
+
+</div>
+
+<div class="grid" id="homeSearchResults"></div>
+
+</div>
+
+</div>
+
+
+<!-- ================= CATEGORY PAGE ================= -->
+
+<div id="categoryPage" class="page">
+
+<div class="category-header">
+
+<button class="back-btn" onclick="goHome()">
+← الرئيسية
+</button>
+
+<h1 id="categoryTitle"></h1>
+
+<p id="categoryDescription"></p>
+
+</div>
+
+
+<div class="search-box">
+
+<input
+type="text"
+id="categorySearch"
+placeholder="🔍 ابحث داخل القسم..."
+onkeyup="searchInsideCategory()">
+
+</div>
+
+
+<div class="grid" id="categoryProducts"></div>
+
+</div>
+
+
+<!-- ================= PRODUCT MODAL ================= -->
+
+<div id="modal">
+
+<div class="box">
+
+<img id="mimg" alt="المنتج">
+
+<h3 id="mname"></h3>
+
+<p id="mprice"></p>
+
+<label>الكمية</label>
+
+<div class="qty-box">
+
+<button onclick="changeModalQty(-1)">−</button>
+
+<input
+id="qty"
+type="number"
+value="1"
+min="1">
+
+<button onclick="changeModalQty(1)">+</button>
+
+</div>
+
+<div style="display:flex;gap:10px">
+
+<button onclick="addCart()">
+🛒 إضافة للسلة
+</button>
+
+<button class="close" onclick="closeModal()">
+إغلاق
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- ================= CART ================= -->
+
+<div id="cartModal" class="cartModal">
+
+<div class="cartBox">
+
+<h2>🛒 سلة المشتريات</h2>
+
+<div id="cartItems"></div>
+
+<h3 id="total">الإجمالي : 0 جنيه</h3>
+
+<hr>
+
+<h3>بيانات العميل</h3>
+
+<input
+type="text"
+id="customerName"
+placeholder="الاسم">
+
+<input
+type="tel"
+id="customerPhone"
+placeholder="رقم الهاتف">
+
+<input
+type="text"
+id="customerAddress"
+placeholder="العنوان بالتفصيل">
+
+<textarea
+id="customerNote"
+placeholder="ملاحظات (اختياري)"></textarea>
+
+<button onclick="checkout()">
+📲 إتمام الطلب على واتساب
+</button>
+
+<br><br>
+
+<button onclick="closeCart()" class="close">
+إغلاق
+</button>
+
+</div>
+
+</div>
+
+
+<footer>
+
+© 2026 MAB Electric - جميع الحقوق محفوظة
+
+</footer>
+
+
+<script>
+
+/* =====================================================
+   WHATSAPP
+===================================================== */
+
+const whatsappNumber="201110696728";
+
+
+/* =====================================================
+   PRODUCTS
+===================================================== */
+
+const data=[
+
+/* =====================================================
+   SMART
+===================================================== */
+
+{
+name:"مفتاح سمارت 1 Gang WiFi",
+price:1365,
+img:"img/smart1.jpg",
+category:"smart",
+popular:true
+},
+
+{
+name:"مفتاح سمارت 2 Gang WiFi",
+price:1465,
+img:"smart2.jpg",
+category:"smart",
+popular:false
+},
+
+{
+name:"مفتاح سمارت 3 Gang WiFi",
+price:1565,
+img:"smart3.jpg",
+category:"smart",
+popular:false
+},
+
+{
+name:"مفتاح سمارت 4 Gang WiFi",
+price:1665,
+img:"smart4.jpg",
+category:"smart",
+popular:false
+},
+
+{
+name:"مفتاح سمارت 1 Gang Zigbee",
+price:1465,
+img:"smart1-zigbee.jpg",
+category:"smart",
+popular:false
+},
+
+{
+name:"مفتاح سمارت 2 Gang Zigbee",
+price:1565,
+img:"smart2-zigbee.jpg",
+category:"smart",
+popular:false
+},
+
+{
+name:"مفتاح سمارت 3 Gang Zigbee",
+price:1665,
+img:"smart3-zigbee.jpg",
+category:"smart",
+popular:false
+},
+
+{
+name:"مفتاح سمارت 4 Gang Zigbee",
+price:1765,
+img:"smart4-zigbee.jpg",
+category:"smart",
+popular:false
+},
+
+
+/* =====================================================
+   TOOLS
+===================================================== */
+
+{
+name:" ماكينة سحب السوستة المستوردة بتروس ",
+price:30,
+img:"img/kk1.jfif",
+category:"installation",
+popular:false
+},
+
+{
+name:" ماكينة سحب السوستة المستوردة بتروس ",
+price:2800,
+img:"img/kk1.jfif",
+category:"tools",
+popular:true
+},
+
+{
+name:"ماكينة السحب المصرية",
+price:1700,
+img:"img/kk2.jfif",
+category:"tools",
+popular:false
+},
+
+{
+name:"كاوية أسلاك",
+price:600,
+img:"img/kk3.jfif",
+category:"tools",
+popular:true
+},
+
+
+{
+name:" قفيز مسطرة 20 ملي pvc و خرطوم ارضي 16",
+price:10,
+img:"img/KK7.jfif",
+category:"tools",
+popular:true
+},
+
+{
+name:"مانع تراب هيلتي ",
+price:50,
+img:"img/kk4.jfif",
+category:"tools",
+popular:true
+},
+
+
+{
+name:" خواشة متعددة المقاسات حتي 13 سم ",
+price:350,
+img:"img/kk5.jpeg",
+category:"tools",
+popular:true
+},
+
+
+{
+name:" خواشة فريم لس      ",
+price:850,
+img:"img/KK6.png",
+category:"tools",
+popular:true
+},
+
+
+{
+name:" مانع غبار مقاس 12 سم        ",
+price:250,
+img:"img/KK8.png",
+category:"tools",
+popular:true
+},
+
+
+{
+name:" مانع غبار مقاس 16 سم        ",
+price:300,
+img:"img/KK8.png",
+category:"tools",
+popular:true
+},
+
+{
+name:" مانع غبار مقاس 18 سم        ",
+price:350,
+img:"img/KK8.png",
+category:"tools",
+popular:true
+},
+
+
+{
+name:"       طقم اصلاح السوستة 6 قطع        ",
+price:450,
+img:"img/KK9.png",
+category:"tools",
+popular:true
+},
+
+
+{
+name:"       طقم اصلاح الخواشة          ",
+price:50,
+img:"img/KK10.jpg",
+category:"tools",
+popular:true
+},
+
+
+{
+name:"       بنسة ترامل رباعي             ",
+price:600,
+img:"img/KK11.jpg",
+category:"tools",
+popular:true
+},
+
+
+{
+name:"       بنسة ترامل سداسي             ",
+price:700,
+img:"img/KK12.jpg",
+category:"tools",
+popular:true
+},
+
+
+{
+name:"     بديل الدبله               ",
+price:20,
+img:"img/KK13.jpg",
+category:"tools",
+popular:true
+},
+
+/* =====================================================
+   SPRINGS
+===================================================== */
+
+
+
+{
+name:"سوستة فيبر جلاس 10 متر 5 ملي",
+price:265,
+img:"img/ss1.png",
+category:"springs",
+popular:false
+},
+
+{
+name:"سوستة فيبر جلاس 20 متر",
+price:530,
+img:"img/ss1.png",
+category:"springs",
+popular:false
+},
+
+{
+name:"سوستة فيبر جلاس 25 متر",
+price:660,
+img:"img/ss1.png",
+category:"springs",
+popular:false
+},
+
+{
+name:"سوستة فيبر جلاس 35 متر",
+price:930,
+img:"img/ss1.png",
+category:"springs",
+popular:false
+},
+
+{
+name:"سوستة واير 5 متر - 4 ملي",
+price:500,
+img:"img/ww1.png",
+category:"springs",
+popular:false
+},
+
+{
+name:"سوستة واير 10 متر - 4 ملي",
+price:650,
+img:"img/ww1.png",
+category:"springs",
+popular:false
+},
+
+{
+name:"سوستة واير 15 متر - 4 ملي",
+price:750,
+img:"img/ww1.png",
+category:"springs",
+popular:false
+},
+
+{
+name:"سوستة واير 20 متر - 4 ملي",
+price:950,
+img:"img/ww1.png",
+category:"springs",
+popular:false
+},
+
+{
+name:"سوستة واير 25 متر - 4 ملي",
+price:1100,
+img:"img/ww1.png",
+category:"springs",
+popular:false
+},
+
+{
+name:"سوستة واير 30 متر - 4 ملي",
+price:1200,
+img:"img/ww1.png",
+category:"springs",
+popular:false
+},
+
+{
+name:"سوستة عيدان 5 متر - 4.5 ملي",
+price:900,
+img:"img/ee1.png",
+category:"springs",
+popular:false
+},
+
+{
+name:"سوستة عيدان 3 متر - 4.5 ملي",
+price:700,
+img:"img/ee1.png",
+category:"springs",
+popular:false
+},
+
+{
+name:"سوستة عيدان 3 متر - 5.5 ملي",
+price:850,
+img:"img/ee1.png",
+category:"springs",
+popular:false
+},
+
+{
+name:"بلبلة السوستة - عجلة طويلة",
+price:120,
+img:"img/bb1.jfif",
+category:"springs",
+popular:false
+},
+
+{
+name:"بلبلة السوستة - عجلة صغيرة",
+price:80,
+img:"img/bb1.jfif",
+category:"springs",
+popular:false
+},
+
+{
+name:"كوتشة سحب السوستة",
+price:120,
+img:"img/bb2.png",
+category:"springs",
+popular:false
+},
+
+/* =====================================================
+   INSTALLATION
+===================================================== */
+
+{
+name:" ماكينة سحب السوستة المستوردة بتروس ",
+price:30,
+img:"img/kk1.jfif",
+category:"installation",
+popular:false
+},
+
+{
+name:"خرطوم أرضي 16",
+price:0,
+img:"hose16.jpg",
+category:"installation",
+popular:false
+},
+
+{
+name:"ماسورة PVC 20 ملي",
+price:0,
+img:"pvc20.jpg",
+category:"installation",
+popular:false
+},
+
+
+/* =====================================================
+   FINISHING
+===================================================== */
+
+{
+name:"أداة تشطيب كهربائية",
+price:0,
+img:"finishing.jpg",
+category:"finishing",
+popular:false
+},
+
+{
+name:"مستلزمات التشطيب",
+price:0,
+img:"finishing-tools.jpg",
+category:"finishing",
+popular:false
+},
+
+
+/* =====================================================
+   ACCESSORIES
+===================================================== */
+
+{
+name:"مستلزمات كهرباء",
+price:0,
+img:"accessories.jpg",
+category:"accessories",
+popular:false
+}
+
+];
+
+
+/* =====================================================
+   VARIABLES
+===================================================== */
+
+let current=0;
+
+let cart=[];
+
+let currentCategory="";
+
+
+/* =====================================================
+   CARD
+===================================================== */
+
+function createCard(p){
+
+let index=data.indexOf(p);
+
+return `
+
+<div class="card">
+
+${p.popular ?
+'<div class="badge">🔥 الأكثر مبيعًا</div>'
+:
+''}
+
+<img
+src="${p.img}"
+alt="${p.name}"
+onclick="show(${index})"
+onerror="this.src='https://picsum.photos/400/500'">
+
+<div class="info">
+
+<h3>${p.name}</h3>
+
+<p>
+
+${p.price>0
+?
+p.price+" جنيه"
+:
+"السعر عند الطلب"}
+
+</p>
+
+<button onclick="show(${index})">
+عرض المنتج
+</button>
+
+</div>
+
+</div>
+
+`;
+
+}
+
+
+/* =====================================================
+   POPULAR
+===================================================== */
+
+function renderPopular(){
+
+let popular=data.filter(p=>p.popular);
+
+document.getElementById("popularProducts").innerHTML=
+popular.map(createCard).join("");
+
+}
+
+renderPopular();
+
+
+/* =====================================================
+   OPEN CATEGORY
+===================================================== */
+
+function openCategory(category){
+
+currentCategory=category;
+
+document.getElementById("homePage")
+.classList.remove("active");
+
+document.getElementById("categoryPage")
+.classList.add("active");
+
+
+const names={
+
+smart:"🏠 قسم السمارت",
+
+tools:"🔧 قسم العدد",
+
+springs:"🧵 سوست سحب الأسلاك",
+
+installation:"⚡ خامات التأسيس",
+
+finishing:"✨ خامات التشطيب",
+
+accessories:"🔌 مستلزمات الكهرباء"
+
+};
+
+
+const descriptions={
+
+smart:"منتجات وأنظمة السمارت والتحكم الذكي",
+
+tools:"ماكينات وأدوات الكهرباء",
+
+springs:"سوست الفيبر جلاس والواير لسحب الأسلاك",
+
+installation:"خامات ومستلزمات أعمال التأسيس",
+
+finishing:"خامات ومستلزمات أعمال التشطيب",
+
+accessories:"مستلزمات وقطع الكهرباء"
+
+};
+
+
+document.getElementById("categoryTitle")
+.textContent=names[category] || "المنتجات";
+
+document.getElementById("categoryDescription")
+.textContent=descriptions[category] || "";
+
+document.getElementById("categorySearch").value="";
+
+
+let products=data.filter(
+p=>p.category===category
+);
+
+document.getElementById("categoryProducts").innerHTML=
+products.length
+?
+products.map(createCard).join("")
+:
+`
+<p style="text-align:center;padding:30px;color:#94a3b8">
+لا توجد منتجات في هذا القسم حاليًا
+</p>
+`;
+
+
+window.scrollTo({
+top:0,
+behavior:"smooth"
+});
+
+}
+
+
+/* =====================================================
+   SEARCH INSIDE CATEGORY
+===================================================== */
+
+function searchInsideCategory(){
+
+let value=
+document.getElementById("categorySearch")
+.value
+.toLowerCase()
+.trim();
+
+
+let products=data.filter(p=>
+p.category===currentCategory &&
+p.name.toLowerCase().includes(value)
+);
+
+
+document.getElementById("categoryProducts").innerHTML=
+products.length
+?
+products.map(createCard).join("")
+:
+`
+<p style="text-align:center;padding:30px;color:#94a3b8">
+❌ مفيش منتج بالاسم ده
+</p>
+`;
+
+}
+
+
+/* =====================================================
+   HOME SEARCH
+===================================================== */
+
+function homeSearchProducts(){
+
+let value=
+document.getElementById("homeSearch")
+.value
+.toLowerCase()
+.trim();
+
+
+let section=
+document.getElementById("homeSearchSection");
+
+
+if(value===""){
+
+section.style.display="none";
+
+return;
+
+}
+
+
+let results=data.filter(p=>
+p.name.toLowerCase().includes(value)
+);
+
+
+section.style.display="block";
+
+
+document.getElementById("homeSearchResults").innerHTML=
+results.length
+?
+results.map(createCard).join("")
+:
+`
+<p style="text-align:center;color:#94a3b8;padding:20px">
+❌ مفيش منتج بالاسم ده
+</p>
+`;
+
+}
+
+
+/* =====================================================
+   GO HOME
+===================================================== */
+
+function goHome(){
+
+document.getElementById("categoryPage")
+.classList.remove("active");
+
+document.getElementById("homePage")
+.classList.add("active");
+
+document.getElementById("categorySearch").value="";
+
+window.scrollTo({
+top:0,
+behavior:"smooth"
+});
+
+}
+
+
+/* =====================================================
+   PRODUCT MODAL
+===================================================== */
+
+function show(i){
+
+current=i;
+
+document.getElementById("mimg").src=
+data[i].img;
+
+document.getElementById("mname").textContent=
+data[i].name;
+
+document.getElementById("mprice").textContent=
+data[i].price>0
+?
+data[i].price+" جنيه"
+:
+"السعر عند الطلب";
+
+document.getElementById("qty").value=1;
+
+document.getElementById("modal").style.display="flex";
+
+}
+
+
+/* =====================================================
+   CLOSE MODAL
+===================================================== */
+
+function closeModal(){
+
+document.getElementById("modal").style.display="none";
+
+}
+
+
+/* =====================================================
+   MODAL QUANTITY
+===================================================== */
+
+function changeModalQty(amount){
+
+let input=document.getElementById("qty");
+
+let value=Number(input.value)+amount;
+
+if(value<1)value=1;
+
+input.value=value;
+
+}
+
+
+/* =====================================================
+   ADD CART
+===================================================== */
+
+function addCart(){
+
+let product=data[current];
+
+let quantity=
+Number(document.getElementById("qty").value);
+
+if(quantity<1){
+quantity=1;
+}
+
+
+let existing=
+cart.find(x=>x.name===product.name);
+
+
+if(existing){
+
+existing.qty+=quantity;
+
+}else{
+
+cart.push({
+
+name:product.name,
+
+price:product.price,
+
+img:product.img,
+
+qty:quantity
+
+});
+
+}
+
+
+updateCount();
+
+closeModal();
+
+alert("✅ تمت إضافة المنتج إلى السلة");
+
+}
+
+
+/* =====================================================
+   CART COUNT
+===================================================== */
+
+function updateCount(){
+
+let totalItems=0;
+
+cart.forEach(x=>{
+totalItems+=x.qty;
+});
+
+document.getElementById("count")
+.textContent=totalItems;
+
+}
+
+
+/* =====================================================
+   OPEN CART
+===================================================== */
+
+function openCart(){
+
+document.getElementById("cartModal")
+.style.display="flex";
+
+renderCart();
+
+}
+
+
+/* =====================================================
+   RENDER CART
+===================================================== */
+
+function renderCart(){
+
+let html="";
+
+let total=0;
+
+
+cart.forEach((x,i)=>{
+
+if(x.price>0){
+total+=x.price*x.qty;
+}
+
+
+html+=`
+
+<div class="item">
+
+<img
+src="${x.img}"
+alt="${x.name}"
+class="cart-image">
+
+<div class="item-info">
+
+<b>${x.name}</b>
+
+<br>
+
+${x.price>0
+?
+x.price+" جنيه"
+:
+"السعر عند الطلب"}
+
+<div class="quantity">
+
+<button
+onclick="changeCartQty(${i},-1)">
+−
+</button>
+
+<span>${x.qty}</span>
+
+<button
+onclick="changeCartQty(${i},1)">
++
+</button>
+
+</div>
+
+</div>
+
+
+<button
+class="delete-btn"
+onclick="removeItem(${i})">
+🗑
+</button>
+
+</div>
+
+`;
+
+});
+
+
+if(cart.length===0){
+
+html=`
+
+<p style="text-align:center;padding:30px;color:#94a3b8">
+
+🛒 السلة فارغة
+
+</p>
+
+`;
+
+}
+
+
+document.getElementById("cartItems")
+.innerHTML=html;
+
+
+document.getElementById("total")
+.textContent=
+"الإجمالي : "+total+" جنيه";
+
+}
+
+
+/* =====================================================
+   CART QUANTITY
+===================================================== */
+
+function changeCartQty(index,amount){
+
+if(!cart[index])return;
+
+cart[index].qty+=amount;
+
+
+if(cart[index].qty<=0){
+
+cart.splice(index,1);
+
+}
+
+
+updateCount();
+
+renderCart();
+
+}
+
+
+/* =====================================================
+   REMOVE
+===================================================== */
+
+function removeItem(index){
+
+if(!cart[index])return;
+
+cart.splice(index,1);
+
+updateCount();
+
+renderCart();
+
+}
+
+
+/* =====================================================
+   CLOSE CART
+===================================================== */
+
+function closeCart(){
+
+document.getElementById("cartModal")
+.style.display="none";
+
+}
+
+
+/* =====================================================
+   CHECKOUT
+===================================================== */
+
+function checkout(){
+
+if(cart.length===0){
+
+alert("🛒 السلة فارغة");
+
+return;
+
+}
+
+
+let name=
+document.getElementById("customerName")
+.value.trim();
+
+let phone=
+document.getElementById("customerPhone")
+.value.trim();
+
+let address=
+document.getElementById("customerAddress")
+.value.trim();
+
+let note=
+document.getElementById("customerNote")
+.value.trim();
+
+
+if(name==="" || phone==="" || address===""){
+
+alert("⚠️ من فضلك أكمل بيانات العميل");
+
+return;
+
+}
+
+
+let total=0;
+
+
+let msg=
+"🛍️ *طلب جديد من MAB Electric*%0A%0A";
+
+
+msg+="👤 الاسم: "+
+encodeURIComponent(name)+
+"%0A";
+
+
+msg+="📞 الهاتف: "+
+encodeURIComponent(phone)+
+"%0A";
+
+
+msg+="📍 العنوان: "+
+encodeURIComponent(address)+
+"%0A";
+
+
+if(note!==""){
+
+msg+="📝 الملاحظات: "+
+encodeURIComponent(note)+
+"%0A";
+
+}
+
+
+msg+="%0A--------------------%0A";
+
+
+cart.forEach(x=>{
+
+if(x.price>0){
+total+=x.price*x.qty;
+}
+
+
+msg+="📦 "+
+encodeURIComponent(x.name)+
+"%0A";
+
+
+msg+="🔢 الكمية: "+
+x.qty+
+"%0A";
+
+
+msg+="💵 السعر: "+
+(
+x.price>0
+?
+x.price+" جنيه"
+:
+"السعر عند الطلب"
+)+
+"%0A";
+
+
+msg+="--------------------%0A";
+
+});
+
+
+msg+="💰 *الإجمالي: "+
+total+
+" جنيه*";
+
+
+window.open(
+"https://wa.me/"+
+whatsappNumber+
+"?text="+
+msg,
+"_blank"
+);
+
+}
+
+</script>
+
+</body>
+</html>
