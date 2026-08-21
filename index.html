@@ -565,7 +565,42 @@ height:250px;
 }
 
 }
+.social-bar{
+    height:50px;
+    background:#181818;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:35px;
+    border-top:1px solid #334155;
+    border-bottom:1px solid #334155;
+}
 
+.social-bar a{
+    color:#fff;
+    text-decoration:none;
+    font-size:15px;
+    font-weight:700;
+    transition:.3s;
+}
+
+.social-bar a:hover{
+    color:#ef4444;
+}
+
+@media(max-width:768px){
+
+    .social-bar{
+        height:45px;
+        gap:18px;
+        padding:0 10px;
+    }
+
+    .social-bar a{
+        font-size:12px;
+    }
+
+} 
 </style>
 </head>
 
@@ -591,7 +626,12 @@ height:250px;
 </div>
 
 </header>
-
+<div class="social-bar">
+    <a href="https://www.tiktok.com/@mab14.4?_r=1&_t=ZS-994rgrwUtPN" target="_blank">TikTok</a>
+    <a href="https://www.instagram.com/ahmedhndwy?igsi=MWZmdXhzeXo5N2J6Yg==" target="_blank">Instagram</a>
+    <a href="https://wa.me/201110696728" target="_blank">WhatsApp</a>
+    <a href="https://www.facebook.com/share/1MB2bNKNaQ/" target="_blank">Facebook</a>
+</div>
 
 <!-- ================= HOME PAGE ================= -->
 
@@ -1936,4 +1976,4 @@ msg,
 </script>
 
 </body>
-</html>
+   </html>
