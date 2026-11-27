@@ -600,7 +600,7 @@ height:250px;
         font-size:12px;
     }
 
-} 
+}
 </style>
 </head>
 
@@ -963,7 +963,7 @@ popular:false
 ===================================================== */
 
 {
-name:" ماكينة سحب السوستة المستوردة بتروس ",
+name:"ماكينة سحب السوستة المستوردة بتروس",
 price:30,
 img:"img/kk1.jfif",
 category:"installation",
@@ -971,7 +971,7 @@ popular:false
 },
 
 {
-name:" ماكينة سحب السوستة المستوردة بتروس ",
+name:"ماكينة سحب السوستة المستوردة بتروس",
 price:2800,
 img:"img/kk1.jfif",
 category:"tools",
@@ -994,53 +994,48 @@ category:"tools",
 popular:true
 },
 
-
 {
-name:" قفيز مسطرة 20 ملي pvc و خرطوم ارضي 16",
-price: "غير متوفر في المخزون",
+name:"قفيز مسطرة 20 ملي pvc و خرطوم ارضي 16",
+price:0,
 img:"img/KK7.jfif",
 category:"tools",
 popular:true
 },
 
 {
-name:"مانع تراب هيلتي ",
+name:"مانع تراب هيلتي",
 price:50,
 img:"img/kk4.jfif",
 category:"tools",
 popular:true
 },
 
-
 {
-name:" خواشة متعددة المقاسات حتي 13 سم ",
+name:"خواشة متعددة المقاسات حتي 13 سم",
 price:350,
 img:"img/kk5.jpeg",
 category:"tools",
 popular:true
 },
 
-
 {
-name:" خواشة فريم لس      ",
+name:"خواشة فريم لس",
 price:850,
 img:"img/KK6.png",
 category:"tools",
 popular:true
 },
 
-
 {
-name:" مانع غبار مقاس 12 سم        ",
+name:"مانع غبار مقاس 12 سم",
 price:250,
 img:"img/KK8.png",
 category:"tools",
 popular:true
 },
 
-
 {
-name:" مانع غبار مقاس 16 سم        ",
+name:"مانع غبار مقاس 16 سم",
 price:300,
 img:"img/KK8.png",
 category:"tools",
@@ -1048,52 +1043,47 @@ popular:true
 },
 
 {
-name:" مانع غبار مقاس 18 سم        ",
+name:"مانع غبار مقاس 18 سم",
 price:350,
 img:"img/KK8.png",
 category:"tools",
 popular:true
 },
 
-
 {
-name:"       طقم اصلاح السوستة 6 قطع        ",
+name:"طقم اصلاح السوستة 6 قطع",
 price:450,
 img:"img/KK9.png",
 category:"tools",
 popular:true
 },
 
-
 {
-name:"       طقم اصلاح الخواشة          ",
+name:"طقم اصلاح الخواشة",
 price:50,
 img:"img/KK10.jpg",
 category:"tools",
 popular:true
 },
 
-
 {
-name:"       بنسة ترامل رباعي             ",
+name:"بنسة ترامل رباعي",
 price:600,
 img:"img/KK11.jpg",
 category:"tools",
 popular:true
 },
 
-
 {
-name:"       بنسة ترامل سداسي             ",
+name:"بنسة ترامل سداسي",
 price:700,
 img:"img/KK12.jpg",
 category:"tools",
 popular:true
 },
 
-
 {
-name:"     بديل الدبله               ",
+name:"بديل الدبله",
 price:20,
 img:"img/KK13.jpg",
 category:"tools",
@@ -1103,8 +1093,6 @@ popular:true
 /* =====================================================
    SPRINGS
 ===================================================== */
-
-
 
 {
 name:"سوستة فيبر جلاس 10 متر 5 ملي",
@@ -1239,7 +1227,7 @@ popular:false
 ===================================================== */
 
 {
-name:" ماكينة سحب السوستة المستوردة بتروس ",
+name:"ماكينة سحب السوستة المستوردة بتروس",
 price:30,
 img:"img/kk1.jfif",
 category:"installation",
@@ -1261,7 +1249,6 @@ img:"pvc20.jpg",
 category:"installation",
 popular:false
 },
-
 
 /* =====================================================
    FINISHING
@@ -1301,16 +1288,9 @@ popular:false
    VARIABLES
 ===================================================== */
 
-let current=0;
-/* =====================================================
-   VARIABLES
-===================================================== */
-
-let current=0;
-
-let cart=[];
-
-let currentCategory="";
+let current = 0;
+let cart = [];
+let currentCategory = "";
 
 
 /* =====================================================
@@ -1319,7 +1299,7 @@ let currentCategory="";
 
 function createCard(p){
 
-let index=data.indexOf(p);
+let index = data.indexOf(p);
 
 return `
 
@@ -1342,9 +1322,9 @@ onerror="this.src='https://picsum.photos/400/500'">
 
 <p>
 
-${p.price>0
+${p.price > 0
 ?
-p.price+" جنيه"
+p.price + " جنيه"
 :
 "السعر عند الطلب"}
 
@@ -1369,9 +1349,9 @@ p.price+" جنيه"
 
 function renderPopular(){
 
-let popular=data.filter(p=>p.popular);
+let popular = data.filter(p => p.popular);
 
-document.getElementById("popularProducts").innerHTML=
+document.getElementById("popularProducts").innerHTML =
 popular.map(createCard).join("");
 
 }
@@ -1385,7 +1365,7 @@ renderPopular();
 
 function openCategory(category){
 
-currentCategory=category;
+currentCategory = category;
 
 document.getElementById("homePage")
 .classList.remove("active");
@@ -1394,7 +1374,7 @@ document.getElementById("categoryPage")
 .classList.add("active");
 
 
-const names={
+const names = {
 
 smart:"🏠 قسم السمارت",
 
@@ -1411,7 +1391,7 @@ accessories:"🔌 مستلزمات الكهرباء"
 };
 
 
-const descriptions={
+const descriptions = {
 
 smart:"منتجات وأنظمة السمارت والتحكم الذكي",
 
@@ -1429,19 +1409,19 @@ accessories:"مستلزمات وقطع الكهرباء"
 
 
 document.getElementById("categoryTitle")
-.textContent=names[category] || "المنتجات";
+.textContent = names[category] || "المنتجات";
 
 document.getElementById("categoryDescription")
-.textContent=descriptions[category] || "";
+.textContent = descriptions[category] || "";
 
-document.getElementById("categorySearch").value="";
+document.getElementById("categorySearch").value = "";
 
 
-let products=data.filter(
-p=>p.category===category
+let products = data.filter(
+p => p.category === category
 );
 
-document.getElementById("categoryProducts").innerHTML=
+document.getElementById("categoryProducts").innerHTML =
 products.length
 ?
 products.map(createCard).join("")
@@ -1467,20 +1447,20 @@ behavior:"smooth"
 
 function searchInsideCategory(){
 
-let value=
+let value =
 document.getElementById("categorySearch")
 .value
 .toLowerCase()
 .trim();
 
 
-let products=data.filter(p=>
-p.category===currentCategory &&
+let products = data.filter(p =>
+p.category === currentCategory &&
 p.name.toLowerCase().includes(value)
 );
 
 
-document.getElementById("categoryProducts").innerHTML=
+document.getElementById("categoryProducts").innerHTML =
 products.length
 ?
 products.map(createCard).join("")
@@ -1500,35 +1480,35 @@ products.map(createCard).join("")
 
 function homeSearchProducts(){
 
-let value=
+let value =
 document.getElementById("homeSearch")
 .value
 .toLowerCase()
 .trim();
 
 
-let section=
+let section =
 document.getElementById("homeSearchSection");
 
 
-if(value===""){
+if(value === ""){
 
-section.style.display="none";
+section.style.display = "none";
 
 return;
 
 }
 
 
-let results=data.filter(p=>
+let results = data.filter(p =>
 p.name.toLowerCase().includes(value)
 );
 
 
-section.style.display="block";
+section.style.display = "block";
 
 
-document.getElementById("homeSearchResults").innerHTML=
+document.getElementById("homeSearchResults").innerHTML =
 results.length
 ?
 results.map(createCard).join("")
@@ -1554,7 +1534,7 @@ document.getElementById("categoryPage")
 document.getElementById("homePage")
 .classList.add("active");
 
-document.getElementById("categorySearch").value="";
+document.getElementById("categorySearch").value = "";
 
 window.scrollTo({
 top:0,
@@ -1570,24 +1550,24 @@ behavior:"smooth"
 
 function show(i){
 
-current=i;
+current = i;
 
-document.getElementById("mimg").src=
+document.getElementById("mimg").src =
 data[i].img;
 
-document.getElementById("mname").textContent=
+document.getElementById("mname").textContent =
 data[i].name;
 
-document.getElementById("mprice").textContent=
-data[i].price>0
+document.getElementById("mprice").textContent =
+data[i].price > 0
 ?
-data[i].price+" جنيه"
+data[i].price + " جنيه"
 :
 "السعر عند الطلب";
 
-document.getElementById("qty").value=1;
+document.getElementById("qty").value = 1;
 
-document.getElementById("modal").style.display="flex";
+document.getElementById("modal").style.display = "flex";
 
 }
 
@@ -1598,7 +1578,7 @@ document.getElementById("modal").style.display="flex";
 
 function closeModal(){
 
-document.getElementById("modal").style.display="none";
+document.getElementById("modal").style.display = "none";
 
 }
 
@@ -1609,13 +1589,13 @@ document.getElementById("modal").style.display="none";
 
 function changeModalQty(amount){
 
-let input=document.getElementById("qty");
+let input = document.getElementById("qty");
 
-let value=Number(input.value)+amount;
+let value = Number(input.value) + amount;
 
-if(value<1)value=1;
+if(value < 1) value = 1;
 
-input.value=value;
+input.value = value;
 
 }
 
@@ -1626,23 +1606,23 @@ input.value=value;
 
 function addCart(){
 
-let product=data[current];
+let product = data[current];
 
-let quantity=
+let quantity =
 Number(document.getElementById("qty").value);
 
-if(quantity<1){
-quantity=1;
+if(quantity < 1){
+quantity = 1;
 }
 
 
-let existing=
-cart.find(x=>x.name===product.name);
+let existing =
+cart.find(x => x.name === product.name);
 
 
 if(existing){
 
-existing.qty+=quantity;
+existing.qty += quantity;
 
 }else{
 
@@ -1676,14 +1656,14 @@ alert("✅ تمت إضافة المنتج إلى السلة");
 
 function updateCount(){
 
-let totalItems=0;
+let totalItems = 0;
 
-cart.forEach(x=>{
-totalItems+=x.qty;
+cart.forEach(x => {
+totalItems += x.qty;
 });
 
 document.getElementById("count")
-.textContent=totalItems;
+.textContent = totalItems;
 
 }
 
@@ -1695,7 +1675,7 @@ document.getElementById("count")
 function openCart(){
 
 document.getElementById("cartModal")
-.style.display="flex";
+.style.display = "flex";
 
 renderCart();
 
@@ -1708,19 +1688,19 @@ renderCart();
 
 function renderCart(){
 
-let html="";
+let html = "";
 
-let total=0;
+let total = 0;
 
 
-cart.forEach((x,i)=>{
+cart.forEach((x, i) => {
 
-if(x.price>0){
-total+=x.price*x.qty;
+if(x.price > 0){
+total += x.price * x.qty;
 }
 
 
-html+=`
+html += `
 
 <div class="item">
 
@@ -1735,23 +1715,23 @@ class="cart-image">
 
 <br>
 
-${x.price>0
+${x.price > 0
 ?
-x.price+" جنيه"
+x.price + " جنيه"
 :
 "السعر عند الطلب"}
 
 <div class="quantity">
 
 <button
-onclick="changeCartQty(${i},-1)">
+onclick="changeCartQty(${i}, -1)">
 −
 </button>
 
 <span>${x.qty}</span>
 
 <button
-onclick="changeCartQty(${i},1)">
+onclick="changeCartQty(${i}, 1)">
 +
 </button>
 
@@ -1773,9 +1753,9 @@ onclick="removeItem(${i})">
 });
 
 
-if(cart.length===0){
+if(cart.length === 0){
 
-html=`
+html = `
 
 <p style="text-align:center;padding:30px;color:#94a3b8">
 
@@ -1789,12 +1769,12 @@ html=`
 
 
 document.getElementById("cartItems")
-.innerHTML=html;
+.innerHTML = html;
 
 
 document.getElementById("total")
-.textContent=
-"الإجمالي : "+total+" جنيه";
+.textContent =
+"الإجمالي : " + total + " جنيه";
 
 }
 
@@ -1803,16 +1783,16 @@ document.getElementById("total")
    CART QUANTITY
 ===================================================== */
 
-function changeCartQty(index,amount){
+function changeCartQty(index, amount){
 
-if(!cart[index])return;
+if(!cart[index]) return;
 
-cart[index].qty+=amount;
+cart[index].qty += amount;
 
 
-if(cart[index].qty<=0){
+if(cart[index].qty <= 0){
 
-cart.splice(index,1);
+cart.splice(index, 1);
 
 }
 
@@ -1830,9 +1810,9 @@ renderCart();
 
 function removeItem(index){
 
-if(!cart[index])return;
+if(!cart[index]) return;
 
-cart.splice(index,1);
+cart.splice(index, 1);
 
 updateCount();
 
@@ -1848,7 +1828,7 @@ renderCart();
 function closeCart(){
 
 document.getElementById("cartModal")
-.style.display="none";
+.style.display = "none";
 
 }
 
@@ -1859,7 +1839,7 @@ document.getElementById("cartModal")
 
 function checkout(){
 
-if(cart.length===0){
+if(cart.length === 0){
 
 alert("🛒 السلة فارغة");
 
@@ -1868,24 +1848,24 @@ return;
 }
 
 
-let name=
+let name =
 document.getElementById("customerName")
 .value.trim();
 
-let phone=
+let phone =
 document.getElementById("customerPhone")
 .value.trim();
 
-let address=
+let address =
 document.getElementById("customerAddress")
 .value.trim();
 
-let note=
+let note =
 document.getElementById("customerNote")
 .value.trim();
 
 
-if(name==="" || phone==="" || address===""){
+if(name === "" || phone === "" || address === ""){
 
 alert("⚠️ من فضلك أكمل بيانات العميل");
 
@@ -1894,82 +1874,82 @@ return;
 }
 
 
-let total=0;
+let total = 0;
 
 
-let msg=
+let msg =
 "🛍️ *طلب جديد من MAB Electric*%0A%0A";
 
 
-msg+="👤 الاسم: "+
-encodeURIComponent(name)+
+msg += "👤 الاسم: " +
+encodeURIComponent(name) +
 "%0A";
 
 
-msg+="📞 الهاتف: "+
-encodeURIComponent(phone)+
+msg += "📞 الهاتف: " +
+encodeURIComponent(phone) +
 "%0A";
 
 
-msg+="📍 العنوان: "+
-encodeURIComponent(address)+
+msg += "📍 العنوان: " +
+encodeURIComponent(address) +
 "%0A";
 
 
-if(note!==""){
+if(note !== ""){
 
-msg+="📝 الملاحظات: "+
-encodeURIComponent(note)+
+msg += "📝 الملاحظات: " +
+encodeURIComponent(note) +
 "%0A";
 
 }
 
 
-msg+="%0A--------------------%0A";
+msg += "%0A--------------------%0A";
 
 
-cart.forEach(x=>{
+cart.forEach(x => {
 
-if(x.price>0){
-total+=x.price*x.qty;
+if(x.price > 0){
+total += x.price * x.qty;
 }
 
 
-msg+="📦 "+
-encodeURIComponent(x.name)+
+msg += "📦 " +
+encodeURIComponent(x.name) +
 "%0A";
 
 
-msg+="🔢 الكمية: "+
-x.qty+
+msg += "🔢 الكمية: " +
+x.qty +
 "%0A";
 
 
-msg+="💵 السعر: "+
+msg += "💵 السعر: " +
 (
-x.price>0
+x.price > 0
 ?
-x.price+" جنيه"
+x.price + " جنيه"
 :
 "السعر عند الطلب"
-)+
+) +
 "%0A";
 
 
-msg+="--------------------%0A";
+msg += "--------------------%0A";
 
 });
 
 
-msg+="💰 *الإجمالي: "+
-total+
+msg += "💰 *الإجمالي: " +
+total +
 " جنيه*";
 
 
 window.open(
-"https://wa.me/"+
-whatsappNumber+
-"?text="+
+"https://wa.me/" +
+whatsappNumber +
+"?text=" +
 msg,
 "_blank"
 );
@@ -1979,4 +1959,4 @@ msg,
 </script>
 
 </body>
-   </html>
+</html>
